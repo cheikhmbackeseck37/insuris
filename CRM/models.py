@@ -71,6 +71,8 @@ class Client(models.Model):
     def wrapper():
         return
     
+    class meta :
+         managed=False
     
    
     
@@ -78,7 +80,7 @@ class Client(models.Model):
 class Supplier(models.Model):
     name = models.CharField(max_length = 100)
     phone  = models.IntegerField()
-    country = models.CharField(max_length = 40, choices = get_country(),  default = "No sector")
+    country = models.CharField(max_length = 100, choices = get_country(),  default = "No sector")
     website = models.CharField(blank = True, max_length =100)
     description = models.CharField(max_length = 1000)
 

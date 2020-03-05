@@ -11,7 +11,7 @@ USER_AUTH = os.path.join(BASE_DIR, "Auth")
 SECRET_KEY = '!g@tkxv!rqru#+fje9xk!m!4m5#s9ai1um#m-r4buc&g37cank'
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['217.70.191.164']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -94,15 +94,9 @@ WSGI_APPLICATION = 'ERP.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-         'init_command': 'SET default_storage_engine=INNODB',
-         },
-         'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        },
          'NAME': 'labsis',
-         'USER': 'root',
-         'PASSWORD': 'sfgraf1993',
+         'USER': 'steward',
+         'PASSWORD':'SFgraf1993###',
          'HOST': 'localhost',
          'PORT': '3306'
     }
@@ -142,10 +136,13 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
-STATICFILES_DIRS = [
-    STATIC_DIR,
-]
+STATIC_ROOT = '/static/'
+
+
 
 MEDIA_ROOT = MEDIA_DIR
 
